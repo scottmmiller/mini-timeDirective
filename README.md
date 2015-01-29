@@ -1,4 +1,4 @@
-mini-timeDirective
+<!-- mini-timeDirective
 ==================
 
 ##Objectives
@@ -19,7 +19,7 @@ Remember to include ng-app in your html and call your module 'timeApp'. Also, re
 
 ###Step 2: Add your name to $scope
 * Head over to your mainCtrl.js file and create a controller called mainCtrl then add a property on $scope called name and set it equal to your name.
-* Head over to your index.html and add 'Hello, ' + whatever the name property on your controller is. 
+* Head over to your index.html and add 'Hello, ' + whatever the name property on your controller is.  -->
 
 ###Step 3: Directive Time
 * Below where it says 'Hello, ' + your $scope.name variable, add the following directive ```<show-time></show-time>```
@@ -27,7 +27,7 @@ Remember to include ng-app in your html and call your module 'timeApp'. Also, re
 * Now it's time to actually build the directive. Double check that you're not getting any errors in your console before we move on.
 * Head over to timeDirective.js
 * Go ahead and get your module, setting it equals to a variable called 'app'
-* Now, add a directive property onto your app giving it a string, which represents  the name of your directive, call it 'showTime' as the first argument. The second argument is a callback function that will return an object. The skeleton of your directive should look something like this.
+* Now, add a directive property onto your app giving it a string, which represents the name of your directive, call it 'showTime' as the first argument. The second argument is a callback function that will return an object. The skeleton of your directive should look something like this.
 ```javascript
   app.directive('showTime', function(){
   return {
@@ -35,7 +35,7 @@ Remember to include ng-app in your html and call your module 'timeApp'. Also, re
   }
 });
 ```
-* Now what we want to do is give our directive certain properties. The first one is we want to make sure it's only used as an element, ie ```<show-time>```. You do this by setting ```restrict: 'E' ``` in the object that's being returned from the directives callback.
+* Now what we want to do is give our directive certain properties. The first one we want is to make sure it's only used as an element, ie ```<show-time>```. You do this by setting ```restrict: 'E' ``` in the object that's being returned from the directives callback.
 * The next proprty we want to give it is a template. This template is just an HTML string that will show wherever the directive is used. Add a property to the object being returned called 'template' whose value is ```<div> The current time is {{time}} </div>```
 * What we're going to do now is use the link method to get the current time, then upate scope.time which will in turn update the template.
 * Add a method onto your returned object called link. Remember, this link method is where you want to put all your DOM manipulation for JavaScript. 
